@@ -10,7 +10,7 @@ Prerequisites
 
 - [MongoDB](https://www.mongodb.org/downloads)
 - [Node.js 8.0+](http://nodejs.org)
-- IBM Cloud account with a Block chain starter plan(https://console.bluemix.net/catalog/services/blockchain)
+- [BM Cloud account with a Block chain starter plan](https://console.bluemix.net/catalog/services/blockchain)
 - [windows-build-tools](https://www.npmjs.com/package/windows-build-tools)
 
 
