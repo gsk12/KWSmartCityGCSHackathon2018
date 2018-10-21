@@ -1,4 +1,4 @@
-![]
+
 Smart City Dashboard 
 =======================
 Our Submission for a "Smart City Management System" GCS Hackathon 2018- By Hari Kishan Darapaneni, Manindra Anantaneni, Sampath Kumar Grandhi
