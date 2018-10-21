@@ -1,0 +1,60 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      i.fas.fa-phone.fa-sm
+      | Citizen Connect
+
+  .btn-group.d-flex(role='group')
+    a.btn.btn-primary(href='https://webapp.kaiza.la', target='_blank').w-100
+      i.far.fa-check-square.fa-sm
+      | Citizen Login
+    a.btn.btn-primary(href='https://manage.kaiza.la', target='_blank').w-100
+      i.fas.fa-code-branch.fa-sm
+      | Officer Login
+
+
+  h4 Send a feedback message
+  .row
+    .col-md-6
+      form(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          .input-group
+            input.form-control(type='text', name='feedback', placeholder='What would you like feedback on?')
+            span.input-group-btn
+              button.btn.btn-success(type='submit') Send
+
+  br
+  |
+  br
+  |
+  br
+  |
+  br
+  |
+  .pb-2.mt-2.mb-4.border-bottom
+    h2 File Upload Form
+  .row
+    .col-md-6
+      p All files will be uploaded to the directory.
+      form(role='form', enctype='multipart/form-data', method='POST')
+        .form-group
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text Upload
+          .custom-file
+            input#inputGroupFile01.custom-file-input(type='file')
+            label.custom-file-label(for='inputGroupFile01') Choose file        
+            label.col-form-label.font-weight-bold File Input
+    
+          select#doc
+            option(value='type') -- type --
+            option(value='Bill') Bill
+            option(value='Complaint') Complaint
+            option(value='Ticket') Ticket
+            option(value='Request') Request
+            option(value='Letter') Letter
+            option(value='Other') Other
+        button.btn.btn-primary(type='submit') Submit

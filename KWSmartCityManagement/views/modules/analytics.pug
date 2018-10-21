@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      i.far.fa-play-circle(style='color: #db1302').fa-sm
+      | Analytics
+
+    script(type='text/javascript' src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript' src='https://www.google.com/jsapi')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' crossorigin='anonymous')
+  #calendar_basic(style='width: 1000px; height: 350px;')
+  script(type='text/javascript').
+    (function() {
+    // Initialize the charting library
+    google.charts.load("current", { packages:["calendar"] });
+    var fetchValues = function() {
+    return $.get(
+    'https://data.cityofchicago.org/resource/6zsd-86xi.json',
+    {
+    '$select' : 'date_trunc_ymd(date) as day, count(*)',
+    '$where' : "date > '2014-01-01'",
+    '$group' : 'day'
+    }
+    ).pipe(function(res) {
+    var ary = []
+    $.each(res, function(idx, rec) {
+    ary.push([new Date(rec.day.replace("T00:00:00", "T12:00:00")), parseInt(rec.count)]);
+    });
+    return ary;
+    });
+    };
+    var drawChart = function(ary) {
+    var data = new google.visualization.DataTable();
+    data.addColumn({ type: 'date', id: 'Date' });
+    data.addColumn({ type: 'number', id: 'count' });
+    data.addRows(ary);
+    var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+    var options = {
+    title: "City of Chicago Police Incidents Over Time",
+    height: 1000,
+    };
+    chart.draw(data, options);
+    };
+    google.charts.setOnLoadCallback(function() {
+    fetchValues().done(function(data) {
+    drawChart(data);
+    });
+    });
+    })();

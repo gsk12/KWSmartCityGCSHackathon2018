@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  style.
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      i.fas.fa-car-side
+      | Google Maps Real Time Traffic 
+
+  #map
+
+  script.
+    var map;
+    
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 41.8781, lng: -87.6298 },
+        zoom: 7
+      });
+    }
+
+  script(async defer src=`https://maps.googleapis.com/maps/api/js?key=${google_map_api_key}&callback=initMap`)

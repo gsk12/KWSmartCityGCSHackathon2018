@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  h1 Smart City Management
+  p.lead A portal for realtime management of a smartcity.
+  hr
+  .row
+    .col-md-6
+      h2 Weather
+      p
+        | Temperature 
+        br
+        |  Forecast
+
+      p
+        a.btn.btn-raised(href='/modules/weather', role='button') View details »
+    .col-md-6
+      h2 Public Works
+      p
+        | Contracts 
+        br
+        |  Maintainance Requests
+      p
+        a.btn.btn-raised(href='/modules/publicworks', role='button') View details »
+    .col-md-6
+      h2 Energy Demand
+      p
+        | Power Usage 
+        br
+        |  Outages
+      p
+        a.btn.btn-raised(href='/modules/energydemand', role='button') View details »
+    .col-md-6
+      h2 E- Governance
+      p
+        | Taxes 
+        br
+        |  Kiazala
+      p
+        a.btn.btn-raised(href='/modules/egovernance', role='button') View details »
+    .col-md-6
+      h2 Agriculture
+      P 
+      |   Agriculture and Allied Sector
+      p
+        a.btn.btn-raised(href='/modules/agriculture', role='button') View details »
+    .col-md-6
+      h2 Analytics
+      p
+      |   US City Data stats
+      p
+        a.btn.btn-raised(href='/modules/analytics', role='button') View details »
+    .col-md-6
+      h2 Real Estate
+      p
+      |   Public Ledger
+      p
+        a.btn.btn-raised(href='/modules/realestate', role='button') View details »
+    .col-md-6
+      h2 Healthcare
+      p
+      |   Transparent Medical Records
+      p
+        a.btn.btn-raised(href='/modules/healthcare', role='button') View details »
+    .col-md-6
+      h2 Traffic
+      p
+      |   Realtime traffic updates
+      p
+        a.btn.btn-raised(href='/modules/traffic', role='button') View details »
+    .col-md-6
+      h2 Other Alerts
+      p
+      |   Emergency Alerts
+      p
+        a.btn.btn-raised(href='/modules/otheralerts', role='button') View details »

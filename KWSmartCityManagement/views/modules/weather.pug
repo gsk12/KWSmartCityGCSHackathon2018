@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      i.fas.fa-cloud
+      | Weather Data
+  
+  .btn-group.d-flex(role='group')
+    a.btn.btn-primary.w-100
+      i.fas.fa-thermometer-quarter
+      | Temperature
+    a.btn.btn-primary.w-100
+      i.fas.fa-tint
+      | Rain Fall
+    a.btn.btn-primary.w-100
+      i.fas.fa-leaf
+      | Air
+    a.btn.btn-primary.w-100
+      i.far.fa-sun
+      | Visibility
+    a.btn.btn-primary.w-100
+      i.fas.fa-umbrella
+      | Humidity
+  .btn-group.d-flex(role='group')
+    a.btn.btn-light.w-100
+      | #{temp}
+    a.btn.btn-light.w-100
+      | #{rain}
+    a.btn.btn-light.w-100
+      | #{wind} mph
+    a.btn.btn-light.w-100
+      | #{visibility}
+    a.btn.btn-light.w-100
+      | #{humidity}
+
+
+  p !{desc}  
+
+
+
